@@ -110,7 +110,7 @@
       line-height: 1.5;
     }
 
- .image-container {
+    .image-container {
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -132,285 +132,67 @@
       height: auto;
     }
     .image-box:hover {
-  background-color: #f90;
-  transform: scale(1.1);
-  cursor: pointer;
-  text-decoration:none;
-  
-}
-
-.image-box:hover img {
-  transform: scale(1.2);
-  text-decoration:none;
- 
-}
-    .image-box span {
-      font-weight: bold;
-      text-decoration:none;
-    }
-
-    footer {
-      background-color: #000000;
-      padding: 30px 0;
-      text-align: center;
-      color: #fff;
-    }
-
-    small {
-      opacity: .5;
-      font-weight: 300;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    textarea {
-      resize: vertical;
-      height: 150px;
-    }
-
-    button {
-      padding: 10px 20px;
-      border-radius: 5px;
-      background: #555;
-      color: #fff;
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    button:hover {
-      background: #f40;
-      color: #fff;
-    }
-    .game-container {
-      width: 100%;
+      background-color: #
+        
+        .image-box:hover {
+        background-color: #f90;
+      }
       
-      overflow: hidden;
-    }
-
-    .game {
-      display: inline-block;
-      margin-right: 30px;
-      animation: scrollAnimation 20s infinite linear;
-    }
-
-    .game-image {
-      max-width: 100px;
-    }
-
-
-    @keyframes scrollAnimation {
-      0% {
-        transform: translateX(100%);
+      footer {
+        background-color: #000000;
+        padding: 20px 0;
+        text-align: center;
+        color: #ffffff;
+        position: relative;
       }
-      100% {
-        transform: translateX(-100%);
+
+      footer p {
+        margin-bottom: 10px;
       }
-    }
- 
+
+      footer a {
+        color: #f90;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
   </style>
-  <script>
-    (function() {
-      var curve = document.getElementById("curve");
-      var last_known_scroll_position = 0;
-      var defaultCurveValue = 350;
-      var curveRate = 3;
-      var ticking = false;
-      var curveValue;
-
-      function scrollEvent(scrollPos) {
-        if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
-          curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
-          curve.setAttribute(
-            "d",
-            "M 800 100 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z"
-          );
-        }
-      }
-
-      window.addEventListener("scroll", function(e) {
-        last_known_scroll_position = window.scrollY;
-
-        if (!ticking) {
-          window.requestAnimationFrame(function() {
-            scrollEvent(last_known_scroll_position);
-            ticking = false;
-          });
-        }
-
-        ticking = true;
-      });
-    })();
-  </script>
 </head>
 <body>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="downloads.html">Roms</a></li>
-    <li><a href="emuladores.html">Emuladores</a></li>
-    <li><a href="contato.html">Contato</a></li>
-  </ul>
-
   <header>
+    <h1>Retro Games</h1>
+    <h3>Welcome to the world of retro gaming!</h3>
     <div class="svg-container">
-      <svg viewBox="0 0 800 400" class="svg">
-        <path id="curve" fill="#50c6d8" d="M 800 100 Q 400 100 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
-      </svg>
-      <h1>Retro Games</h1>
-      <h3>Divirta-se à vontade</h3>
-      <p>Tenha jogos em suas próprias mãos.</p>
-      <p>Faça o download de seus jogos favoritos aqui!</p>
+      <img class="svg" src="/images/game-controller.svg" alt="Game Controller">
     </div>
   </header>
-
-<main>
-  <div>
-  
-    <h1>Playstation 1</h1>
-   
+  <main>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Games</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
     <div class="image-container">
       <div class="image-box">
-        <img src="crash.jpeg" alt="Crash Bandicoot">
-       
-        <a href="crash_bandicoot.zip" download>Crash Bandicoot</a>
+        <img src="/images/game1.jpg" alt="Game 1">
       </div>
       <div class="image-box">
-        <img src="download.jfif" alt="Resident Evil 3">
-        
-        <a href="resident_evil_3.zip" download>Resident Evil 3</a>
+        <img src="/images/game2.jpg" alt="Game 2">
       </div>
       <div class="image-box">
-        <img src="sh-cover-jogoveio.jpg" alt="Silent Hill">
- 
-        <a href="silent_hill.zip" download>Silent Hill</a>
+        <img src="/images/game3.jpg" alt="Game 3">
       </div>
       <div class="image-box">
-        <img src="yu-gi-oh-forbidden-memories-slus-014-11.jpg" alt="Yugioh Forbidden Memories">
-      
-        <a href="yugioh_forbidden_memories.zip" download style="display:inline-block">Yugioh Forbidden Memories</a>
+        <img src="/images/game4.jpg" alt="Game 4">
       </div>
     </div>
-  </div>
-</main>
-
-<main>
-  <div>
-    <h1>Playstation 2</h1>
-    
-    <div class="image-container">
-      <div class="image-box">
-        <img src="boxart-eua.jpg" alt="Downhill Domination">
-        
-        <a href="https://drive.google.com/file/d/1nJ6Rhg9_8xrgLVDUrjiMmVfsyM_VwO1H/view?usp=sharing" download>Dowhill Domination</a>
-      </div>
-      <div class="image-box">
-        <img src="mkarma.jpg" alt="Mortal Kombat Armageddon">
-        
-        <a href="https://drive.google.com/file/d/1SYilhzlR-K-Hy5zH3mEK1GgPer_LV1yM/view?usp=sharing" download style= "display:inline-block";> Mortal Kombat Armageddon</a>
-      </div>
-      <div class="image-box">
-        <img src="need.png" alt="Need for Speed 2">
-       
-        <a href="https://drive.google.com/file/d/1F_QZlcF9cP00UXOpX9-0GyeEtwpWFVBA/view?usp=sharing" download>Need for Speed</a>
-      </div>
-      <div class="image-box">
-        <img src="res.jfif" alt="Resident Evil 4">
-       
-        <a href="https://drive.google.com/file/d/1vS9g8xmtBzNlrZURIjGwOpImR_n19Uw1/view?usp=sharing download>Resident Evil 4</a>
-      </div>
-    
-  
-</main>
-
-<main>
-  <div>
-    <h1>Neo Geo</h1>
-   
-    <div class="image-container">
-      <div class="image-box">
-        <img src="dodge ball.png" alt="Dodge Ball">
-       
-        <a href="mortal_kombat_trilogy.zip" download>Dodge Ball</a>
-      </div>
-      <div class="image-box">
-        <img src="fatal fury.png" alt="Fatal Fury">
-       
-        <a href="resident_evil_2.zip" download>Fatal Fury</a>
-      </div>
-      <div class="image-box">
-        <img src="kof-removebg-preview.png" alt="the King of Fighters">
-        
-        <a href="doom_64.zip" download>the King of Fighters</a>
-      </div>
-      <div class="image-box">
-        <img src="samurai shodow.png" alt="Samurai Shodow">
-        
-        <a href="samurai_shodow.zip" download>Samurai Shodow</a>
-      </div>
-    </div>
-  </div>
-</main>
-
-<main>
-  <div>
-    <h1>Nintendo 64</h1>
-   
-    <div class="image-container">
-      <div class="image-box">
-        <img src="zelda.png" alt="The Legend of Zelda: Ocarina of Time">
-        <div class="down-button">
-        <a href="zelda_ocarina_of_time.zip" download style="display: inline-block;">the legend of Zelda<br>
-        Ocarina of Time</a>
-        </div>
-      </div>
-      
-      <div class="image-box">
-        <img src="re2.jpg" alt="Resident Evil 2">
-        
-        <a href="resident_evil_2.zip" download > Resident Evil 2</a>
-      </div>
-     
-      <div class="image-box">
-        <img src="doom.jpg" alt="Doom 64">
-       
-        <a href="doom_64.zip" download>Doom 64</a>
-      </div>
-    
-      <div class="image-box">
-        <img src="mk.jpg" alt="Mortal Kombat Trilogy">
-       
-        <a href="mortal_kombat_trilogy.zip" download> Mortal Kombat Trilogy</a>
-      </div>
-
-    </div>
-  </div>
-</main>
-
-
+    <p>Experience the nostalgia of classic retro games with Retro Games! We offer a wide selection of games from various consoles and generations. Relive the excitement of childhood favorites and discover new gems from the past. Start your retro gaming journey today!</p>
+  </main>
   <footer>
-    <p>Emuladores e ROMs</p>
-    <small>Rubertt's Store &copy; 2023</small>
+    <p>&copy; 2023 Retro Games. All rights reserved. | Designed by <a href="#">Your Name</a></p>
   </footer>
 </body>
 </html>
