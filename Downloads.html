@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/style/style.css" media="screen" />
+  <meta charset="utf-8">
+  <title>Retro Games</title>
+  
+  <script>
+    (function() {
+      var curve = document.getElementById("curve");
+      var last_known_scroll_position = 0;
+      var defaultCurveValue = 350;
+      var curveRate = 3;
+      var ticking = false;
+      var curveValue;
+
+      function scrollEvent(scrollPos) {
+        if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
+          curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
+          curve.setAttribute(
+            "d",
+            "M 800 100 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z"
+          );
+        }
+      }
+
+      window.addEventListener("scroll", function(e) {
+        last_known_scroll_position = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            scrollEvent(last_known_scroll_position);
+            ticking = false;
+          });
+        }
+
+        ticking = true;
+      });
+    })();
+  </script>
+</head>
+<body>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/Downloads.html">Roms</a></li>
+    <li><a href="/emuladores.html">Emuladores</a></li>
+    <li><a href="/contato.html">Contato</a></li>
+  </ul>
+
+  <header>
+    <div class="svg-container">
+      <svg viewBox="0 0 800 400" class="svg">
+        <path id="curve" fill="#50c6d8" d="M 800 100 Q 400 100 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
+      </svg>
+      <h1>Retro Games</h1>
+      <h3>Divirta-se à vontade</h3>
+    </div>
+  </header>
+
+  <main>
+    <div>
+      <p>Tenha jogos em suas próprias mãos.</p>
+      <h1>Playstation 1 </h1>
+      <p>Faça o download de seus jogos favoritos aqui!</p>
+      <div class="image-container">
+        <div class="image-box">
+          <img src="imagens/ps1/crash.jpeg" alt="The Legend of Zelda: Ocarina of Time">
+          <span><br><br>Crash Bandicoot<span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/ps1/download.jfif" alt="Resident Evil 2">
+          <span><br><br>Resident Evil 3</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/ps1/sh-cover-jogoveio.jpg" alt="Doom 64">
+          <span><br><br>Silent Hill</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/ps1/yu-gi-oh-forbidden-memories-slus-014-11.jpg" alt="Mortal Kombat Trilogy">
+          <span><br><br>Yugioh Forbidden memories</span>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main>
+    <div>
+     <h1> Playstation 2</h1>
+      <p>teste</p>
+      <div class="image-container">
+        <div class="image-box">
+          <img src="imagens/ps2/boxart-eua.jpg" alt="The Legend of Zelda: Ocarina of Time">
+          <span><br><br>Downhill Domination</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/ps2/mk.jpg" alt="Resident Evil 2">
+          <span><br><br>Mortal Kombat Armageddon</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/ps2/need.png" alt="Doom 64">
+          <span><br><br>Need for speed 2</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/ps2/res.jfif" alt="Mortal Kombat Trilogy">
+          <span><br><br>Resident evil 4</span>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <main>
+    <div>
+     <h1> Neo Geo </h1>
+      <p>teste</p>
+      <div class="image-container">
+        <div class="image-box">
+          <img src="imagens/neo geo/dodge ball.png" alt="The Legend of Zelda: Ocarina of Time">
+          <span><br><br>dodge ball</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/neo geo/fatal fury.png" alt="Resident Evil 2">
+          <span>Fatal Fury</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/neo geo/kof-removebg-preview.png" alt="Doom 64">
+          <span><br><br>The king of fighters</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/neo geo/samurai shodow.png" alt="Mortal Kombat Trilogy">
+          <span><br><br>Samurai Shodow</span>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <main>
+    <div>
+     <h1> Nintendo 64</h1>
+      <p>Faça o download de seus jogos favoritos aqui!</p>
+      <div class="image-container">
+        <div class="image-box">
+          <img src="imagens/zelda.png" alt="The Legend of Zelda: Ocarina of Time">
+          <span><br>The Legend of Zelda:<br> Ocarina of Time</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/re2.jpg" alt="Resident Evil 2">
+          <span>Resident Evil 2</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/doom.jpg" alt="Doom 64">
+          <span>Doom 64</span>
+        </div>
+        <div class="image-box">
+          <img src="imagens/mk.jpg" alt="Mortal Kombat Trilogy">
+          <span>Mortal Kombat Trilogy</span>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Emuladores e ROMs</p>
+    <small>Rubertt's Store &copy; 2023</small>
+  </footer>
+</body>
+</html>
